@@ -29,6 +29,9 @@ EXPOSE 67/udp
 EXPOSE 80
 EXPOSE 443
 
+# Logging Workaround
+RUN ln -sf /dev/stdout /var/log/pihole.log
+
 ENV S6_LOGGING 0
 ENV S6_KEEP_ENV 1
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS 2
